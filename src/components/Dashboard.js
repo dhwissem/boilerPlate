@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import SidebarWrap from './SidebarWrap';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
+import theme from './muiTheme';
+
 import '../styles/example.less';
 
 export default class Dashboard extends Component {
@@ -11,13 +15,17 @@ export default class Dashboard extends Component {
   render() {
 
     return (
-      <div id="outer-container" style={{height: '100%'}}>
+        <MuiThemeProvider muiTheme={theme}>
 
-        <SidebarWrap />
-        <main id="viewport">
-          <h1><a href="">Contents Goes Here..</a></h1>
-        </main>
-      </div>
+          <div id="outer-container" style={{height: '100%'}}>
+
+            <SidebarWrap />
+            <main id="viewport">
+              <h1><a href="">Contents Goes Here..</a></h1>
+            </main>
+          </div>
+
+        </MuiThemeProvider>
     );
   }
 }

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Filters from './Filters';
+import Fields from './Fields';
 
 import './SidebarWrap.less';
 
@@ -6,12 +8,19 @@ export default class SidebarWrap extends Component {
     constructor (props) {
       super(props);
       this.state = {
-        isOpen: false
+        isOpen: false,
+        width: '300px'
       };
     }
 
     toggleMenu() {
       this.setState({ isOpen: !this.state.isOpen });
+    }
+
+    toggleWidth(data) {
+      this.setState({
+        width: data === 300 ? '400px' : '300px'
+      })
     }
 
     render() {
@@ -23,14 +32,13 @@ export default class SidebarWrap extends Component {
               onClick={() => this.toggleMenu()}
           />)}
 
-          <div id={this.props.id} className={`menu-wrap ${this.state.isOpen}`}>
-            <div className='bm-menu'  >
-              <div onClick={() => this.toggleMenu()} style={{ height: '50%'}} >
+          <div id={this.props.id} className={`menu-wrap ${this.state.isOpen}`} style={{width: this.state.width}}>
 
-                <h6>components goes here..</h6>
+            <h2>Sidebar</h2>
 
-              </div>
-            </div>
+            <Filters/>
+
+            <Fields onUpdate={this.toggleWidth.bind(this)} />
 
             <div className='close-button'>
               <span className='cross'>
