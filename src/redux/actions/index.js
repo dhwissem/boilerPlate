@@ -1,30 +1,30 @@
-import GithubApi from '../../api/GitHubAPI';
+import api from '../../api/api';
 
-function receiveRepos(json) {
+function receiveRentals(json) {
   return {
-    type: 'RECEIVE_POSTS',
-    repos: json
+    type: 'RECEIVE_RENTALS',
+    payload: json
   };
 }
 
-function receiveContributors(data) {
+function receiveUsers(data) {
   return {
-    type: 'RECEIVE_CONTRIBUTORS',
+    type: 'RECEIVE_USERS',
     contributors: data
   }
 }
 
-export function fetchRepos(language) {
+export function fetchRentals() {
   return dispatch => {
-    return GithubApi.getAllRepos(language)
-      .then(json => dispatch(receiveRepos(json)));
+    return api.getRentals()
+      .then(json => dispatch(receiveRentals(json)));
   };
 }
 
-export function fetchContributors(reposUser) {
-  return dispatch => {
-    return GithubApi.getContributors(reposUser)
-      .then(data => dispatch(receiveContributors(data)))
-  };
-}
+// export function fetchContributors(reposUser) {
+//   return dispatch => {
+//     return GithubApi.getContributors(reposUser)
+//       .then(data => dispatch(receiveContributors(data)))
+//   };
+// }
 
