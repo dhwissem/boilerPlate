@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
 
+import rentals from './rentals';
 
 const rootReducer = combineReducers({
-"test": 10
+  rentals
 });
 
 export default rootReducer;

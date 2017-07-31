@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Filters from './Filters';
+import Filters from './Filters/FiltersContainer';
 import Fields from './Fields';
 
 import './SidebarWrap.less';
