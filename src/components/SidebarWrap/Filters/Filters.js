@@ -1,24 +1,23 @@
 import React from 'react';
-import Slider from 'material-ui/Slider';
+import PropTypes from 'prop-types';
+import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
+import './Filters.less';
 
-const styles = {
-  root: {
-    display: 'flex',
-    height: 124,
-    flexDirection: 'row',
-    justifyContent: 'space-around'
-  },
-};
+const Filters = ({updateRentalFilter, updateUserFilter, getRentals, getUsers}) => (
+  <div className="filters" >
+    <div className="filter-input" >
+      <TextField
+        hintText="Search by City"
+        onChange={(e) => { updateRentalFilter(e.target.value);}}
+      />
 
+      <TextField
+        hintText="Search By User"
+        onChange={(e) => { updateUserFilter(e.target.value);}}
+      />
 
-const Filters = (props) => (
-  <div style={{ marginRight: 20 }}>
-    <div style={styles.root}>
-      <p>Max</p>
-      <Slider style={{ width: 350 }} axis="x-reverse" />
-      <p>Min</p>
     </div>
     <RaisedButton
       label="Load Data"
@@ -26,11 +25,18 @@ const Filters = (props) => (
       style={{ margin: 10 }}
       fullWidth={true}
       onClick={() => {
-        props.getRentals();
-        props.getUsers();
+        getRentals();
+        getUsers();
       }}
     />
   </div>
 );
+
+Filters.propTypes = {
+  updateRentalFilter: PropTypes.func,
+  updateUserFilter: PropTypes.func,
+  getRentals: PropTypes.func,
+  getUsers: PropTypes.func
+};
 
 export default Filters;

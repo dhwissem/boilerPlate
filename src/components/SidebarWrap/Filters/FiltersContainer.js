@@ -1,17 +1,26 @@
 import { connect } from 'react-redux';
-import { fetchRentals, fetchUsers } from '../../../redux/actions';
+import { fetchRentals, fetchUsers, setRentalFilter, setUserFilter } from '../../../redux/actions';
 
 import Filters from './Filters';
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = () => ({
+});
 
 const mapDispatchToProps = (dispatch) => ({
   getRentals: () => {
-    dispatch(fetchRentals())
+    dispatch(fetchRentals());
   },
 
   getUsers: () => {
-    dispatch(fetchUsers())
+    dispatch(fetchUsers());
+  },
+
+  updateRentalFilter: (data) => {
+    dispatch(setRentalFilter(data));
+  },
+
+  updateUserFilter: (data) => {
+    dispatch(setUserFilter(data));
   }
 
 });

@@ -2,12 +2,12 @@ export default class api {
 
   static getRentals() {
     return fetch('http://localhost:3004/rentals')
-      .then(response => response.json())
+      .then(response => response.json());
   }
 
   static getUsers() {
     return fetch('http://localhost:3004/users')
-      .then(response => response.json())
+      .then(response => response.json());
   }
 
   static postTabs(data) {
@@ -24,13 +24,7 @@ export default class api {
         },
         method: "POST",
         body: JSON.stringify({ type: data, date: currentDate })
-      })
-      .then(function (res) {
-        console.log(res)
-      })
-      .catch(function (res) {
-        console.log(res)
-      })
+      });
   }
 }
 

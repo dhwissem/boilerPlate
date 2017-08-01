@@ -1,14 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Tabs, Tab } from 'material-ui/Tabs';
+
 import './Fields.less';
 
 
-export default class Fields extends React.Component {
+class Fields extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      value: 'a',
+      value: 'Regular',
     };
   }
 
@@ -17,7 +19,7 @@ export default class Fields extends React.Component {
     this.setState({
       value: value,
     });
-  };
+  }
 
   render() {
     return (
@@ -27,10 +29,10 @@ export default class Fields extends React.Component {
           value={this.state.value}
           onChange={this.handleChange.bind(this)}
         >
-          <Tab label="Regular" value="a">
+          <Tab label="Regular" value="Regular">
             <p className="regular-text">This is the regular width of the Sidebar</p>
           </Tab>
-          <Tab label="Large" value="b">
+          <Tab label="Large" value="Large">
             <p className="large-text">This is the Large width of the Sidebar</p>
           </Tab>
         </Tabs>
@@ -38,3 +40,9 @@ export default class Fields extends React.Component {
     );
   }
 }
+
+Fields.propTypes = {
+  onUpdate: PropTypes.func
+};
+
+export default Fields;

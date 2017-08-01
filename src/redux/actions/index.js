@@ -11,14 +11,28 @@ function receiveUsers(json) {
   return {
     type: 'RECEIVE_USERS',
     payload: json
-  }
+  };
+}
+
+export function setRentalFilter(data) {
+  return {
+    type: 'SET-RENTAL-FILTER',
+    payload: data
+  };
+}
+
+export function setUserFilter(data) {
+  return {
+    type: 'SET-USER-FILTER',
+    payload: data
+  };
 }
 
 export function updateTab(tab) {
   return {
     type: 'UPDATE-TAB',
     payload: tab
-  }
+  };
 }
 
 export function fetchRentals() {
@@ -36,7 +50,7 @@ export function fetchUsers() {
 }
 
 export function fetchTabs(data) {
-  return api.postTabs(data)
+  return api.postTabs(data);
 }
 
 
