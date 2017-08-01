@@ -7,10 +7,17 @@ function receiveRentals(json) {
   };
 }
 
-function receiveUsers(data) {
+function receiveUsers(json) {
   return {
     type: 'RECEIVE_USERS',
-    contributors: data
+    payload: json
+  }
+}
+
+export function updateTab(tab) {
+  return {
+    type: 'UPDATE-TAB',
+    payload: tab
   }
 }
 
@@ -21,10 +28,10 @@ export function fetchRentals() {
   };
 }
 
-// export function fetchContributors(reposUser) {
-//   return dispatch => {
-//     return GithubApi.getContributors(reposUser)
-//       .then(data => dispatch(receiveContributors(data)))
-//   };
-// }
+export function fetchUsers() {
+  return dispatch => {
+    return api.getUsers()
+      .then(json => dispatch(receiveUsers(json)));
+  };
+}
 

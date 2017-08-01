@@ -27,7 +27,7 @@ const Filters = ( props ) => (
       primary={true}
       style={{margin: 10}}
       fullWidth={true}
-      onClick={() => { props.getRentals() }}
+      onClick={() => { props.getRentals(); props.getUsers(); }}
       />
   </div>
 );
