@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Divider from 'material-ui/Divider';
 import './Rental.less';
 
@@ -18,5 +19,11 @@ const User = ({ city, street, zip }) => (
     </div>
   </div>
 );
+
+User.propTypes = {
+  city: PropTypes.string,
+  street: PropTypes.string,
+  zip: PropTypes.string
+};
 
 export default User;

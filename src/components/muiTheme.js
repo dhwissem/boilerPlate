@@ -1,4 +1,4 @@
-import { fade } from 'material-ui/utils/colorManipulator'
+import { fade } from 'material-ui/utils/colorManipulator';
 import * as Colors from 'material-ui/styles/colors';
 import { spacing, getMuiTheme } from 'material-ui/styles';
 
