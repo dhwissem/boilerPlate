@@ -35,3 +35,8 @@ export function fetchUsers() {
   };
 }
 
+export function fetchTabs(data) {
+  return api.postTabs(data)
+}
+
+

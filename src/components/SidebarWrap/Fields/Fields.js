@@ -1,5 +1,5 @@
 import React from 'react';
-import {Tabs, Tab} from 'material-ui/Tabs';
+import { Tabs, Tab } from 'material-ui/Tabs';
 import './Fields.less';
 
 
@@ -21,7 +21,7 @@ export default class Fields extends React.Component {
 
   render() {
     return (
-      <div className="fields" ref="child" >
+      <div className="fields" ref="child">
         <h4>You can change the width of the sidebar from this component</h4>
         <Tabs
           value={this.state.value}

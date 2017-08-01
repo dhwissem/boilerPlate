@@ -1,7 +1,7 @@
 {
-  "name": "git_trending",
+  "name": "disponio",
   "version": "0.1.0",
-  "description": "Mimics of Git Trending",
+  "description": "Disponio Test",
   "engines": {
     "npm": ">=3"
   },

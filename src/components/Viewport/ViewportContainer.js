@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { updateTab } from '../../redux/actions';
+import { updateTab, fetchTabs } from '../../redux/actions';
 
 import Viewport from './Viewport';
 
@@ -12,7 +12,11 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   updateTab: (tab) => {
     dispatch(updateTab(tab))
+  },
+  postTab: (data) => {
+    fetchTabs(data)
   }
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Viewport);

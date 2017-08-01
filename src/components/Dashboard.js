@@ -10,28 +10,25 @@ import './Dashboard.less';
 
 export default class Dashboard extends Component {
 
-  constructor (props) {
+  constructor(props) {
     super(props);
   }
 
   render() {
 
     return (
-        <MuiThemeProvider muiTheme={theme}>
+      <MuiThemeProvider muiTheme={theme}>
+        <div id="outer-container" style={{ height: '100%' }}>
+          <SidebarWrap />
+          <main id="viewport">
+            <h1 style={{ paddingBottom: 45 }}><span>Disponio</span></h1>
+            <div className="view-port">
+              <Viewport />
+            </div>
+          </main>
+        </div>
 
-          <div id="outer-container" style={{height: '100%'}}>
-
-            <SidebarWrap />
-            <main id="viewport">
-              <h1 style={{paddingBottom: 45}}><span>Disponio</span></h1>
-              <div className="view-port">
-                <Viewport />
-              </div>
-
-            </main>
-          </div>
-
-        </MuiThemeProvider>
+      </MuiThemeProvider>
     );
   }
 }

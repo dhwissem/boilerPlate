@@ -12,23 +12,24 @@ const styles = {
   },
 };
 
-/**
- * The orientation of the slider can be reversed and rotated using the `axis` prop.
- */
-const Filters = ( props ) => (
-  <div style={{marginRight: 20}}>
+
+const Filters = (props) => (
+  <div style={{ marginRight: 20 }}>
     <div style={styles.root}>
       <p>Max</p>
-      <Slider style={{width: 350}} axis="x-reverse" />
+      <Slider style={{ width: 350 }} axis="x-reverse" />
       <p>Min</p>
     </div>
     <RaisedButton
       label="Load Data"
       primary={true}
-      style={{margin: 10}}
+      style={{ margin: 10 }}
       fullWidth={true}
-      onClick={() => { props.getRentals(); props.getUsers(); }}
-      />
+      onClick={() => {
+        props.getRentals();
+        props.getUsers();
+      }}
+    />
   </div>
 );
 

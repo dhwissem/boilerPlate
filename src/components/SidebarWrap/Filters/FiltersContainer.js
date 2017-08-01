@@ -3,9 +3,7 @@ import { fetchRentals, fetchUsers } from '../../../redux/actions';
 
 import Filters from './Filters';
 
-const mapStateToProps = (state) => ({
-
-});
+const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = (dispatch) => ({
   getRentals: () => {
